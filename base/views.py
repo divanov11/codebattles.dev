@@ -37,7 +37,7 @@ def register_page(request):
     form = CustomUserCreateForm()
 
     if request.method == 'POST':
-        form = CustomUserCreateForm(request.POST)
+        form = CustomUserCreateForm(request.POST, request.FILES,)
         if form.is_valid():
             user = form.save(commit=False)
             user.save()
@@ -70,7 +70,7 @@ def home_page(request):
     count = users.count()
 
     page = request.GET.get('page')
-    paginator = Paginator(users, 20)
+    paginator = Paginator(users, 50)
 
     try:
         users = paginator.page(page)
@@ -86,7 +86,6 @@ def home_page(request):
  
 
     
-    users = users[0:limit]
     events = Event.objects.all()
     context = {'users':users, 'events':events, 'count':count, 'paginator':paginator, 'pages':pages}
     return render(request, 'home.html', context)
@@ -159,9 +158,6 @@ from datetime import datetime
 def event_page(request, pk):
     event = Event.objects.get(id=pk)
     
-    present = datetime.now().timestamp()
-    deadline = event.registration_deadline.timestamp()
-    past_deadline = (present > deadline)
     
     registered = False
     submitted = False
@@ -170,7 +166,7 @@ def event_page(request, pk):
 
         registered = request.user.events.filter(id=event.id).exists()
         submitted = Submission.objects.filter(participant=request.user, event=event).exists()
-    context = {'event':event, 'past_deadline':past_deadline, 'registered':registered, 'submitted':submitted}
+    context = {'event':event, 'registered':registered, 'submitted':submitted}
     return render(request, 'event.html', context)
 
 

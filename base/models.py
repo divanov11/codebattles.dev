@@ -3,6 +3,9 @@ from django.db import models
 import uuid
 from django.contrib.auth.models import AbstractUser
 from django_resized import ResizedImageField
+
+import time
+from datetime import datetime
 # Create your models here.
 
 class User(AbstractUser):
@@ -25,11 +28,15 @@ class User(AbstractUser):
     facebook = models.URLField(max_length=500, null=True, blank=True)
     github = models.URLField(max_length=500, null=True, blank=True)
 
+    class Meta:
+        ordering = ['avatar']
+
 
 
 
 class Event(models.Model):
     name = models.CharField(max_length=200)
+    preview = models.TextField(null=True, blank=True)
     description = models.TextField(null=True, blank=True)
     participants = models.ManyToManyField(User, blank=True, related_name='events')
     start_date = models.DateTimeField(null=True)
@@ -42,6 +49,24 @@ class Event(models.Model):
 
     def __str__(self):
         return self.name
+
+    class Meta:
+        ordering = []
+
+    @property
+    def event_status(self):
+        status = None
+        
+        present = datetime.now().timestamp()
+        deadline = self.registration_deadline.timestamp()
+        past_deadline = (present > deadline)
+
+        if past_deadline:
+            status = 'Finished'
+        else:
+            status = 'Ongoing'
+
+        return status
 
 
 class Submission(models.Model):

@@ -7,7 +7,7 @@
             <h1>Register</h1>
 
             <div>
-            <form method="POST" action="{% url 'register' %}">
+            <form method="POST" action="{% url 'register' %}" enctype="multipart/form-data">
                 {% csrf_token %}
                 {% for field in form %}
                 <div class="form-field--wrapper">

@@ -6,7 +6,7 @@
         <h1>{{event.name}}</h1>
     </div>
    
-    {% if past_deadline == False %}
+    {% if event.event_status == 'Ongoing' %}
     <div class="section" id="event--action--wrapper">
         {% if registered %} 
             <p class="text--success">You have already registed for this event || </p>
@@ -17,7 +17,7 @@
         {% if submitted %} 
             <p class="text--success">You have already submitted your project</p>
         {% else %}
-            <a class="btn btn--primary" href="{% url 'project-submission' event.id %}">Submit Project</a>
+            <a class="btn btn--secondary" href="{% url 'project-submission' event.id %}">Submit Project</a>
         {% endif %}
     
     </div>
@@ -33,11 +33,12 @@
         {% for user in event.participants.all %}
             <a href="{% url 'profile' user.id%}">
                 <div class="wrapper--user">
-                    <img class="user--avatar--sm" src="{{user.avatar.url}}"/>
-                    <h4>{{user.name}}</h4>
-                    {% if user.bio %}
-                        <p>{{user.bio|truncatechars:50}}</p>
-                    {% endif %}
+                    <div class="avatar__border">
+                        <img class="user--avatar--sm" src="{{user.avatar.url}}"/>
+                    </div>
+        
+                    <p>{{user.name}}</p>
+            
                 </div>
             </a>
         {% endfor %}
