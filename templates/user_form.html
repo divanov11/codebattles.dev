@@ -1,0 +1,22 @@
+{% extends 'main.html' %}
+
+{% block content %}
+    <h1>Edit Account</h1>
+
+    <div class="section">
+        <form method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+
+            {% for field in form %}
+                <div class="form-field--wrapper">
+                    <label>{{field.label}}</label>
+                    {{field}}
+                </div>
+            {% endfor %}
+            <div class="form-field--wrapper">
+                <input class="btn btn--primary" type="submit" value="Update Account" />
+            </div>
+
+        </form>
+    </div>
+{% endblock content %}

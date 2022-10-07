@@ -1,0 +1,45 @@
+{% extends 'main.html' %}
+
+{% block content %}
+    <section class="container--events">
+        <h3>Events</h3>
+
+        <div class="events--lists">
+            {% for event in events %}
+         
+                <a href="{% url 'event' event.id %}">
+                    <div class="wrapper--event">
+                        <h3>{{event.name}}</h3>
+                        <p>{{event.participants.all.count}} registered</p>
+                        <p>Registration deadline: {{event.registration_deadline}}</p>
+                    </div>
+                </a>
+            {% endfor %}
+        </div>
+    </section>
+
+    <section>
+        <h3>Users : {{count}}</h3>
+
+        <div class="users--lists section">
+            {% for user in users %}
+                <a href="{% url 'profile' user.id%}">
+                    <div class="wrapper--user">
+                        <img class="user--avatar--sm" src="{{user.avatar.url}}"/>
+                        <h4>{{user.name}}</h4>
+                        {% if user.bio %}
+                        <p>{{user.bio|truncatechars:50}}</p>
+                        {% endif %}
+                    </div>
+                </a>
+            {% endfor %}
+        </div>
+        <div class="section paginator--wrapper">
+            {% for page in pages %}
+                <a class="btn btn--primary" href="?page={{page}}">{{page}}</a>
+            {% endfor %}
+        </div>
+    </section>
+
+    
+{% endblock %}

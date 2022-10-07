@@ -1,0 +1,184 @@
+@import url('https://fonts.googleapis.com/css2?family=Readex+Pro:wght@300;400;500;600;700&display=swap');
+
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Readex Pro';
+    background-color: rgb(249, 250,251);
+ }
+
+.text--success{
+    color: #198754;
+}
+ .section{
+     margin: 2em 0;
+ }
+
+.btn{
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    background-color: rgb(204, 204, 204);
+    color: black;
+    display: block;
+    width: fit-content;
+    margin: 10px;
+    border:none;
+}
+
+.btn--warning{
+    background-color: #ffe900;
+}
+
+.btn--primary{
+    background-color:steelblue;
+    color: #fff;
+}
+
+.error{
+    color: #E55D42;
+}
+
+.success{
+    color: #31a62b;
+}
+
+.info{
+    color: #3aabd4;
+}
+
+.container--main{
+    width: 1200px;
+    margin: 0 auto;
+    padding:0 1em ;
+}
+
+
+
+
+/* NAVBAR STYLING */
+
+
+nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 0.5em;
+    border-bottom: 1px solid rgb(218, 218, 218);
+}
+
+ nav a{
+     text-decoration: none;
+     color: black;
+     margin: 0 10px;
+ }
+
+
+ /* HOME PAGE */
+.events--lists{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2em;
+}
+
+ .wrapper--event{
+    border: 1px solid rgb(218, 218, 218);
+    padding: 1em;
+    border-radius: 5px;
+ }
+
+ .wrapper--user{
+    border: 1px solid rgb(218, 218, 218);
+    padding: 1em;
+    border-radius: 5px;
+ }
+
+ .user--avatar--sm{
+     height: 50px;
+     width: 50px;
+     object-fit: cover;
+     border-radius: 50%;
+ }
+
+ .user--avatar--lg{
+    height: 150px;
+    width: 150px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+
+ .users--lists{
+     display: grid;
+     grid-template-columns: 1fr 1fr 1fr 1fr;
+     gap: 2em;
+ }
+
+
+ .paginator--wrapper{
+     display: flex;
+     flex-wrap: wrap;
+ }
+
+
+ /* EVENT PAGE STYLING */
+
+ #event--action--wrapper{
+    display: flex;
+    flex-wrap: wrap;
+ }
+
+
+  /* LOGIN REGISTRATION STYLING */
+
+
+  .login-register--container{
+      max-width: 600px;
+      margin: 0 auto;
+      border:1px solid rgb(218, 218, 218);
+      padding: 1em;
+      border-radius: 5px;
+  }
+
+  .form-field--wrapper{
+      margin-top: 1em;
+      margin-bottom: 1em;
+  }
+
+  input{
+      width: 100%;
+  }
+
+
+ @media (max-width:1200px) {
+     .container--main{
+         width: 100%;
+     }
+ }
+
+ @media (max-width:800px) {
+  
+
+    .users--lists{
+   
+        grid-template-columns: 1fr 1fr 1fr;
+    
+    }
+}
+
+@media (max-width:600px) {
+  
+    .events--lists{
+        grid-template-columns: 1fr;
+
+    }
+
+    .users--lists{
+   
+        grid-template-columns: 1fr 1fr;
+    
+    }
+}

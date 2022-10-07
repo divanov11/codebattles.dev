@@ -1,0 +1,45 @@
+{% extends 'main.html' %}
+
+{% block content %}
+
+    <div class="section">
+        <h1>{{event.name}}</h1>
+    </div>
+   
+    {% if past_deadline == False %}
+    <div class="section" id="event--action--wrapper">
+        {% if registered %} 
+            <p class="text--success">You have already registed for this event || </p>
+        {% else %}
+            <a class="btn btn--primary"  href="{% url 'registration-confirmation' event.id %}">Register</a>
+        {% endif %}
+
+        {% if submitted %} 
+            <p class="text--success">You have already submitted your project</p>
+        {% else %}
+            <a class="btn btn--primary" href="{% url 'project-submission' event.id %}">Submit Project</a>
+        {% endif %}
+    
+    </div>
+    {% else %}
+        <p>Registration closed for this event.</p>
+    {% endif %}
+
+    <div class="section">
+        <p>{{event.description|linebreaks|urlize}}</p>
+    </div>
+
+    <div class="users--lists section">
+        {% for user in event.participants.all %}
+            <a href="{% url 'profile' user.id%}">
+                <div class="wrapper--user">
+                    <img class="user--avatar--sm" src="{{user.avatar.url}}"/>
+                    <h4>{{user.name}}</h4>
+                    {% if user.bio %}
+                        <p>{{user.bio|truncatechars:50}}</p>
+                    {% endif %}
+                </div>
+            </a>
+        {% endfor %}
+    </div>
+{% endblock content %}
