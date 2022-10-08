@@ -292,13 +292,41 @@ nav{
 
 
   .login-register--container{
-      max-width: 600px;
+      max-width: 564px;
       margin: 0 auto;
       border:1px solid rgb(218, 218, 218);
-      padding: 1em;
+      padding: 45px 50px;
       border-radius: 5px;
   }
+  .login-register--container h1{
+    font-family: 'Readex Pro';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 40px;
+  }
 
+  .login-register--container p.login-greattings{
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 30px;
+    color:black;
+  }
+
+  .login-register--container p.login-register-switchpagetext{
+    font-family: 'Readex Pro';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 20px;
+    line-height: 25px;
+    color:black;
+  }
+  
+    .login-register--container p.login-register-switchpagetext a{
+        color:black;
+        font-weight: 500;
+        font-size: 20px;
+    }
+ 
   .form-field--wrapper{
       margin-top: 1em;
       margin-bottom: 1em;
@@ -306,6 +334,58 @@ nav{
 
   input{
       width: 100%;
+  }
+
+  .form-field--wrapper label{
+    line-height: 30px;
+    font-weight: 400; 
+  }
+
+  input#id_password1, input#id_password2, input#id_name, input#id_email, input#id_username{
+    width: 100%;
+    height: 55px;
+    border:1px solid #000000;
+  }
+
+ .login-email , .login-password{
+    width: 100%;
+    height: 55px;
+    border:1px solid #000000;
+ }
+
+  #id_avatar{
+    width: 100%;
+    outline: none;
+    font-size: 17px;
+    border:1px solid #000000;
+    display: inline-block;
+    color:#BDBDBD;
+  }
+
+  ::-webkit-file-upload-button{
+    color:black;
+    background-color: #EBEBEB;
+    padding:20px;
+    border:none;
+    outline: none;
+  }
+  input::file-selector-button {
+    color:black;
+    background-color: #EBEBEB;
+    padding:20px;
+    border:none;
+    outline: none;
+}
+ 
+
+  .formsubmit-btn{
+    background-color: #000000;
+    color:white;
+    border:none;
+    width: 100%;
+    margin-left: 0px;
+    height: 60px;
+    margin-bottom: 33px;
   }
 
 
