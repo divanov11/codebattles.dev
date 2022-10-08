@@ -1,6 +1,10 @@
 {% extends 'main.html' %}
+{% load markdown_extras %}
+{% load static %}
 
 {% block content %}
+<link rel='stylesheet' type='text/css' media='screen' href='{% static "css/event.css" %}'>
+
 
     <div class="section">
         <h1>{{event.name}}</h1>
@@ -26,7 +30,8 @@
     {% endif %}
 
     <div class="section">
-        <p>{{event.description|linebreaks|urlize}}</p>
+        <!-- <p>{{event.description|linebreaks|urlize}}</p> -->
+        <p>{{event.description| markdown | safe }}</p>
     </div>
 
     <div class="users--lists section">
