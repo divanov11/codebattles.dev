@@ -122,6 +122,31 @@ nav{
      margin: 0 10px;
  }
 
+ .nav--profile{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border:1px solid gray;
+    padding:7px 24px;
+ }
+
+ .nav--profile img{
+    width: 25px;
+    height: 25px;
+ }
+
+ .nav--profile p{
+    color:black;
+    border:none;
+    padding:0px;
+    margin:0px;
+    margin-left:10px;
+    font-family: 'Readex Pro';
+    font-style: normal;
+    font-weight: 600;
+    line-height: 25px;
+ }
+
 
  #logo--text{
      font-size: 26px;
