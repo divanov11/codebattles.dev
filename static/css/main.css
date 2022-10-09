@@ -288,17 +288,19 @@ nav{
  }
 
 
-  /* LOGIN REGISTRATION STYLING */
+  /* LOGIN/REGISTRATION/EDIT STYLING */
 
+ 
 
-  .login-register--container{
+  .login-register--container,.edit-accinfo-container{
       max-width: 564px;
       margin: 0 auto;
       border:1px solid rgb(218, 218, 218);
       padding: 45px 50px;
       border-radius: 5px;
   }
-  .login-register--container h1{
+
+  .form-field--title{
     font-family: 'Readex Pro';
     font-style: normal;
     font-weight: 700;
@@ -340,10 +342,16 @@ nav{
     line-height: 30px;
     font-weight: 400; 
   }
-
-  input#id_password1, input#id_password2, input#id_name, input#id_email, input#id_username{
+  
+  input.form-field--input, input#id_password1, input#id_password2{
     width: 100%;
     height: 55px;
+    border:1px solid #000000;
+    padding: 20px;
+  }
+  
+  textarea.form-field--input-txarea{
+    width: 100%;
     border:1px solid #000000;
     padding: 20px;
   }

@@ -4,7 +4,7 @@
 
     {% if page == 'register' %}
         <div class="login-register--container">
-            <h1>Create an Account</h1>
+            <h1 class="form-field--title">Create an Account</h1>
 
             <div>
             <form method="POST" action="{% url 'register' %}" enctype="multipart/form-data">
@@ -33,7 +33,7 @@
         {% else %}
         <div class="login-register--container section">
             <p class="login-greattings">Welcome to</p>
-            <h1>CodeBattels</h1>
+            <h1 class="form-field--title">CodeBattels</h1>
 
             <form method="POST" action="{% url 'login' %}">
                 {% csrf_token %}
@@ -46,13 +46,13 @@
                 </div> -->
 
                 <div class="form-field--wrapper">
-                    <label>Email:</label>
-                    <input id="id_email" type="email" name="email"/>
+                    <label>Email</label>
+                    <input class="form-field--input" id="id_email" type="email" name="email"/>
                 </div>
 
                 <div class="form-field--wrapper">
-                    <label>Password:</label>
-                    <input id="id_password1" type="password" name="password"/>
+                    <label>Password</label>
+                    <input class="form-field--input" id="id_password1" type="password" name="password"/>
                 </div>
 
                 <div class="form-field--wrapper">
