@@ -1,7 +1,8 @@
 {% extends 'main.html' %}
 
 {% block content %}
-    <h1>Edit Account</h1>
+<div class="'edit-accinfo-container">
+    <h1 class="form-field--title">Edit Account</h1>
 
     <div class="section">
         <form method="POST" enctype="multipart/form-data">
@@ -14,9 +15,10 @@
                 </div>
             {% endfor %}
             <div class="form-field--wrapper">
-                <input class="btn btn--primary" type="submit" value="Update Account" />
+                <input class="btn btn--primary formsubmit-btn" type="submit" value="Update Account" />
             </div>
 
         </form>
     </div>
+</div>
 {% endblock content %}
