@@ -1,2 +1,0 @@
-[phases.build]
-cmds = ["python manage.py collectstatic"]
