@@ -29,7 +29,7 @@ load_dotenv()
 SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False#str(os.environ.get('DEBUG')) == "1"
+DEBUG = True#str(os.environ.get('DEBUG')) == "1"
 
 
 ALLOWED_HOSTS = ['codebattles.dev', 'www.codebattles.dev', 'codebattle.up.railway.app', '127.0.0.1', 'localhost']
