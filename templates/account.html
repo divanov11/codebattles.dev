@@ -3,12 +3,12 @@
 {% block content %}
     <div class="section">
         <img class="user--avatar--lg" src="{{user.avatar.url}}"/>
+    </div>
 
-        <h1>My account</h1>
-
-        <a class="btn btn--warning" href="{% url 'edit-account' %}">Edit</a>
-        <a class="btn btn--warning" href="{% url 'change-password' %}">Reset password</a>
-        <a class="btn btn--warning" href="{% url 'profile' user.id %}">View Profile</a>
+    <div id="account--buttons">
+        <a class="btn btn--secondary" href="{% url 'edit-account' %}">Edit</a>
+        <a class="btn btn--secondary" href="{% url 'change-password' %}">Reset password</a>
+        <a class="btn btn--primary" href="{% url 'profile' user.id %}">View Profile</a>
     </div>
 
 

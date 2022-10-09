@@ -280,6 +280,12 @@ nav{
  }
 
 
+ #account--buttons{
+     display: flex;
+     flex-wrap: wrap;
+ }
+
+
  /* EVENT PAGE STYLING */
 
  #event--action--wrapper{
