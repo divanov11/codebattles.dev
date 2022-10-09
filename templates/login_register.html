@@ -4,33 +4,36 @@
 
     {% if page == 'register' %}
         <div class="login-register--container">
-            <h1>Register</h1>
+            <h1>Create an Account</h1>
 
             <div>
             <form method="POST" action="{% url 'register' %}" enctype="multipart/form-data">
-                {% csrf_token %}
-                {% for field in form %}
-                <div class="form-field--wrapper">
-                    <label>{{field.label}}</label>
-                    {{field}}
-                    <div>
-                        {% for error in field.errors %}
-                        <p class="error">{{error}}</p>
-                        {% endfor %}
+                <div id="form-wrapper">
+                    {% csrf_token %}
+                    {% for field in form %}
+                    <div class="form-field--wrapper" >
+                        <label>{{field.label}}</label>
+                        {{field}}
+                        <div>
+                            {% for error in field.errors %}
+                            <p class="error">{{error}}</p>
+                            {% endfor %}
+                        </div>
                     </div>
-                </div>
-                {% endfor %}
-                
-                <input class="btn btn--primary" type="submit" value="Register"/>
+                    {% endfor %}
+                    
+                    <input class="btn btn--primary formsubmit-btn" type="submit" value="Register"/>
+               </div>
             </form> 
             </div>
 
-            <p>Already have an account? <a href="{% url 'login' %}">Login</a></p>
+            <p class="login-register-switchpagetext">Already have an account? <a href="{% url 'login' %}">Login</a></p>
         </div>
     
         {% else %}
         <div class="login-register--container section">
-            <h1>Login User</h1>
+            <p class="login-greattings">Welcome to</p>
+            <h1>CodeBattels</h1>
 
             <form method="POST" action="{% url 'login' %}">
                 {% csrf_token %}
@@ -44,19 +47,19 @@
 
                 <div class="form-field--wrapper">
                     <label>Email:</label>
-                    <input type="email" name="email"/>
+                    <input id="id_email" type="email" name="email"/>
                 </div>
 
                 <div class="form-field--wrapper">
                     <label>Password:</label>
-                    <input type="password" name="password"/>
+                    <input id="id_password1" type="password" name="password"/>
                 </div>
 
                 <div class="form-field--wrapper">
-                    <input class="btn btn--primary" type="submit" value="Login"/>
+                    <input class="btn btn--primary formsubmit-btn" type="submit" value="Login"/>
                 </div>
 
-                <p>Don't have an account? <a href="{% url 'register' %}">Register</a></p>
+                <p class="login-register-switchpagetext">Don't have an account? <a href="{% url 'register' %}">Register</a></p>
             </form>
         </div>
         

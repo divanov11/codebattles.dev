@@ -5,8 +5,7 @@ from .models import Submission, User
 class UserForm(ModelForm):
     class Meta:
         model = User 
-        fields = ['username', 'name', 'email', 'avatar' ,'bio', 'twitter', 'linkedin', 'facebook', 'github', 'website']
-
+        fields = ['username', 'name', 'email', 'avatar' ,'bio', 'twitter', 'linkedin', 'facebook', 'github', 'website']    
 
 class SubmissionForm(ModelForm):
     class Meta:
@@ -16,4 +15,4 @@ class SubmissionForm(ModelForm):
 class CustomUserCreateForm(UserCreationForm):
     class Meta:
         model = User
-        fields = ['username', 'email', 'name', 'avatar', 'password1', 'password2']
+        fields = ['username', 'email', 'name', 'password1', 'password2', 'avatar']
