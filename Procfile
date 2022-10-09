@@ -1,1 +1,1 @@
-web: python manage.py collectstatic && gunicorn codebattle.asgi && python manage.py collectstatic
+web: python manage.py migrate && gunicorn codebattle.asgi
