@@ -6,6 +6,7 @@
 <link rel='stylesheet' type='text/css' media='screen' href='{% static "css/event.css" %}'>
 
 
+
     <div class="section">
         <h1>{{event.name}}</h1>
     </div>
@@ -29,9 +30,8 @@
         <p>Registration closed for this event.</p>
     {% endif %}
 
-    <div class="section">
-        <!-- <p>{{event.description|linebreaks|urlize}}</p> -->
-        <p>{{event.description| markdown | safe }}</p>
+    <div class="markdown-body">
+        {{event.description| markdown | safe }}
     </div>
 
     <div class="users--lists section">
