@@ -20,3 +20,12 @@ pre, code{
     background: #DEE4ED;
     border-radius: 5px;
 }
+
+
+ul, ol{
+    margin: 2em;
+}
+
+p{
+    margin: 1em 0;
+}
