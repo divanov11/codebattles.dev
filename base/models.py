@@ -72,7 +72,7 @@ class Event(models.Model):
 class Submission(models.Model):
     participant = models.ForeignKey(User, on_delete=models.SET_NULL, null=True, related_name="submissions")
     event = models.ForeignKey(Event, on_delete=models.SET_NULL, null=True)
-    details = models.TextField(null=True, blank=True)
+    details = models.TextField(null=True, blank=False)
     id = models.UUIDField(default=uuid.uuid4, unique=True,
                           primary_key=True, editable=False)
 
