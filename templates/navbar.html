@@ -15,7 +15,10 @@
 
     <div id="nav--col3">
         {% if request.user.is_authenticated %}
-        <a class="btn btn--secondary" href="{% url 'account' %}">{{request.user.name}}</a>
+        <a class="nav--profile" href="{% url 'account' %}">
+            <img class="user--avatar--lg" src="{{user.avatar.url}}"/>
+            <p>{{request.user.name}}</p>
+        </a>
         <a class="btn btn--primary" href="{% url 'logout' %}">Logout</a>
         {% else %}
         <a class="btn btn--secondary" href="{% url 'login' %}">Login</a>
