@@ -51,7 +51,7 @@ class Event(models.Model):
         return self.name
 
     class Meta:
-        ordering = []
+        ordering = ['-end_date']
 
     @property
     def event_status(self):
